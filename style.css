@@ -9,3 +9,19 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+form {
+    display: grid;
+    gap: 0.5em;
+    max-width: 30em;
+}
+
+form input,
+form textarea,
+form button {
+    font: inherit;
+}
+
+form button {
+    width: fit-content;
+}
