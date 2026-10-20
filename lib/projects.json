@@ -1,0 +1,74 @@
+[
+    {
+        "title": "DSC106 Project 2: Visualization Checkpoint",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Developed visualizations supporting opposing propositions and discussed the persuasive and deceptive techniques used."
+    },
+    {
+        "title": "DSC106 Lab 4: JavaScript II",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Used reusable JavaScript functions to display projects from JSON and load public GitHub statistics through an API."
+    },
+    {
+        "title": "DSC106 Project 1: Food Processing Visualization",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Compared weighted predicted ultra-processed rates across food groups at Target, Walmart, and Whole Foods."
+    },
+    {
+        "title": "DSC106 Lab 3: JavaScript",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Added shared navigation, a theme selector with saved preferences, and JavaScript handling for a contact form."
+    },
+    {
+        "title": "DSC106 Lab 2: CSS",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Styled a personal portfolio with responsive layouts, project cards, navigation, and a contact form."
+    },
+    {
+        "title": "DSC106 Lab 1: Personal Portfolio",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Built the HTML foundation of a personal portfolio with Home, Projects, Contact, and CV pages."
+    },
+    {
+        "title": "Mechanical Design Optimizer",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Explored minimum-mass beam designs under stress, deflection, safety factor, and manufacturing constraints, and benchmarked surrogate models."
+    },
+    {
+        "title": "COGS109 Homework 1: College Data Exploration",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Explored the College dataset and examined unusual observations, including an impossible graduation rate."
+    },
+    {
+        "title": "COGS109 Homework 2: Regression",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Studied regression models and interpreted residual patterns to assess model assumptions."
+    },
+    {
+        "title": "COGS109 Homework 3: Regression Diagnostics",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Examined regression assumptions and used diagnostic evidence to evaluate potential model problems."
+    },
+    {
+        "title": "Placeholder: 2025 Project",
+        "year": 2025,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Example project entry with a placeholder year for testing the portfolio. Replace with a real project."
+    },
+    {
+        "title": "Placeholder: 2024 Project",
+        "year": 2024,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Example project entry with a placeholder year for testing the portfolio. Replace with a real project."
+    }
+]
