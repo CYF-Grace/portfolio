@@ -116,6 +116,10 @@
             overflow-wrap: anywhere;
         }
 
+        code {
+            overflow-wrap: anywhere;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 12px;
@@ -168,16 +172,18 @@
             <h2 id="for-heading">For the Proposition</h2>
 
             <figure>
-                <img src="ccrb_supporting.png" alt="Stacked bar showing 33,358 allegation records:
-                    46.3% unsubstantiated, 28.8% exonerated, and
-                    24.9% substantiated. The headline emphasizes
-                    the 75.1% without a substantiated finding.">
+                <img src="ccrb_supporting.png" alt="Overall, 75.1% of released allegation records
+                    did not receive a substantiated finding.
+                    Substantiation is below one-third in every
+                    category: Abuse of Authority 30.4%,
+                    Discourtesy 21.9%, Force 12.8%, and
+                    Offensive Language 16.9%.">
                 <figcaption>
                     <strong>Figure 1.</strong>
-                    Of the 33,358 allegation records in the dataset,
-                    8,301 (24.9%) were substantiated. The visualization
-                    emphasizes the remaining 75.1%, framing
-                    substantiation as uncommon.
+                    Overall, 8,301 of 33,358 allegation records were
+                    substantiated (24.9%). Across all four allegation
+                    categories, the substantiated share remains
+                    below one-third.
                 </figcaption>
             </figure>
 
@@ -190,47 +196,58 @@
 
             <ul>
                 <li>
-                    <strong>Title and headline emphasis.</strong>
+                    <strong>Headline and benchmark framing.</strong>
                     <span class="score">Score: −1</span>
-                    We use “Only one in four” and the large “75.1%”
-                    headline to emphasize how many allegations did
-                    not receive a substantiated finding. Unlike a
-                    headline foregrounding the 8,301 substantiated
-                    allegations, this framing makes substantiation
-                    appear uncommon. It draws attention away from
-                    the nearly one-quarter substantiated share
-                    without actually hiding it, and the word “only”
-                    suggests a judgment about what rate should be
-                    expected without establishing a benchmark.
+                    The large 75.1% headline emphasizes the share
+                    without substantiation, while “fewer than one
+                    in three” presents the category results as
+                    consistently low. Compared with foregrounding
+                    the 8,301 substantiated allegations, this
+                    framing makes substantiation appear uncommon.
+                    The one-third reference line reinforces that
+                    impression, but it is a chosen benchmark rather
+                    than an established standard for how often
+                    allegations should be substantiated.
                 </li>
 
                 <li>
                     <strong>Similar colors for distinct outcomes.</strong>
                     <span class="score">Score: −0.5</span>
-                    We use similar warm colors for unsubstantiated
-                    and exonerated allegations so readers may
-                    initially perceive them as a shared group without
-                    substantiation. Compared with three equally
-                    distinct colors, this creates a stronger visual
-                    contrast between that combined group and the
-                    gray substantiated segment. The labels preserve
-                    the distinction, but the color grouping can blur
-                    the difference between insufficient evidence
-                    and conduct that occurred but was permitted
-                    by NYPD rules.
+                    Similar warm colors associate unsubstantiated
+                    and exonerated allegations as a shared group
+                    without substantiation. Compared with three
+                    equally distinct colors, this makes the combined
+                    75.1% more prominent. The labels preserve the
+                    distinction, but the grouping risks blurring
+                    insufficient evidence with conduct that occurred
+                    and was permitted by NYPD rules.
                 </li>
 
                 <li>
-                    <strong>Stacked bar instead of a pie chart.</strong>
+                    <strong>Category-specific rates rather than raw counts.</strong>
+                    <span class="score">Score: +1.5</span>
+                    We group records into all four allegation
+                    categories and divide each substantiated count
+                    by its category total. This reveals whether the
+                    overall pattern persists across different types
+                    of allegations, whereas raw counts would be
+                    dominated by larger categories. Displaying each
+                    numerator and denominator also makes the
+                    differences in sample size visible.
+                </li>
+
+                <li>
+                    <strong>Length encoding and percentage references.</strong>
                     <span class="score">Score: +0.5</span>
-                    We use a stacked bar to encode outcome shares
-                    through length rather than the angles of a pie
-                    chart. The complete percentage scale and direct
-                    labels help readers interpret the proportions,
-                    while the adjacent warm segments visually
-                    emphasize the combined 75.1%. Internal segments
-                    do not all share a starting baseline, so the
-                    labels remain important for precise comparisons.
+                    The stacked overview and category bars use length
+                    rather than pie-chart angles, with direct
+                    numerical labels to support interpretation.
+                    The category bars share a zero baseline and a
+                    complete percentage scale, making their
+                    substantiated shares easier to compare.
+                    All categories remain visible, including Abuse
+                    of Authority, which comes closest to the
+                    one-third benchmark.
                 </li>
             </ul>
         </section>
@@ -239,17 +256,19 @@
             <h2 id="against-heading">Against the Proposition</h2>
 
             <figure>
-                <img src="ccrb_opposing.png" alt="Stacked bar showing 17,910 retained allegation
-                    records: 8,301 substantiated, or 46.3%, and
-                    9,609 exonerated, or 53.7%. The chart excludes
-                    15,448 unsubstantiated allegations.">
+                <img src="ccrb_opposing.png" alt="After excluding unsubstantiated allegations,
+                    46.3% of retained records are substantiated
+                    overall. Category rates are Abuse of Authority
+                    51.2%, Discourtesy 81.5%, Force 21.8%, and
+                    Offensive Language 98.4%. Three categories
+                    exceed half.">
                 <figcaption>
                     <strong>Figure 2.</strong>
                     Excluding 15,448 unsubstantiated allegations
-                    leaves 17,910 records. The same 8,301
-                    substantiated allegations now represent 46.3%
-                    of the retained findings, making substantiation
-                    appear more common.
+                    raises the overall substantiated share to 46.3%.
+                    Substantiation becomes the majority outcome in
+                    three of four categories, although Force
+                    remains at 21.8%.
                 </figcaption>
             </figure>
 
@@ -262,62 +281,62 @@
 
             <ul>
                 <li>
-                    <strong>“Nearly half” framing.</strong>
-                    <span class="score">Score: −0.5</span>
-                    We describe 46.3% as “nearly half” to emphasize
-                    its proximity to the familiar 50% benchmark.
-                    Compared with simply stating the exact
-                    percentage, this wording makes substantiation
-                    appear more common and slightly amplifies the
-                    impression of its size. The numerical label
-                    remains available, allowing readers to see that
-                    the share is still below half.
-                </li>
-
-                <li>
-                    <strong>Filtering and selective attention.</strong>
+                    <strong>Filtering and changing the denominator.</strong>
                     <span class="score">Score: −1.5</span>
                     We retain only substantiated and exonerated
-                    allegations, raising the displayed substantiation
-                    rate from 24.9% to 46.3% without changing the
-                    substantiated count. Keeping all three outcomes
-                    would preserve the original denominator and
-                    weaken this opposing impression. The headline
-                    and bar are more prominent than the qualification
-                    about retained findings, encouraging readers to
-                    generalize a result that actually answers a
-                    narrower question. Calling these “conclusive”
-                    findings also makes the exclusion sound natural,
-                    even though unsubstantiated allegations were
-                    fully investigated and unfounded findings are
-                    absent from the source.
+                    findings, raising the overall substantiated
+                    share from 24.9% to 46.3% without changing its
+                    count. Keeping all outcomes would weaken the
+                    opposing impression; filtering creates a
+                    stronger contrast by answering a narrower
+                    question. Unsubstantiated allegations were
+                    also fully investigated, so their exclusion
+                    does not establish that the process commonly
+                    substantiates allegations overall.
                 </li>
 
                 <li>
-                    <strong>Complete percentage scale.</strong>
-                    <span class="score">Score: +1</span>
-                    We include a complete 0% to 100% scale so readers
-                    can judge how large the displayed proportions
-                    actually are. Compared with an unscaled bar or
-                    a truncated scale, it provides a clearer reference
-                    and shows that substantiated allegations remain
-                    below half of the retained records. This improves
-                    numerical interpretation, although it does not
-                    resolve the denominator’s limited scope.
+                    <strong>Emphasizing categories rather than their sizes.</strong>
+                    <span class="score">Score: −1</span>
+                    The title emphasizes that substantiation is the
+                    majority outcome in three of four categories,
+                    giving each category equal rhetorical importance
+                    despite different record counts. This makes
+                    the pattern sound more widespread than the
+                    overall 46.3% alone, but three of four categories
+                    does not mean three quarters of allegations.
+                    All categories and their denominators remain
+                    visible, including the Force exception and the
+                    129 retained Offensive Language records.
                 </li>
 
                 <li>
-                    <strong>Disclosure of excluded records.</strong>
+                    <strong>Majority benchmark and color emphasis.</strong>
+                    <span class="score">Score: +0.5</span>
+                    The 50% reference line provides a clear benchmark
+                    for the title’s majority claim, and teal
+                    highlights the three categories exceeding it.
+                    The Force bar remains visible in a muted color
+                    rather than being removed. Compared with
+                    highlighting all categories identically, this
+                    guides attention toward the opposing argument
+                    while retaining the counterexample. The complete
+                    percentage scale and labels let readers check
+                    the comparison.
+                </li>
+
+                <li>
+                    <strong>Disclosing denominators and exclusions.</strong>
                     <span class="score">Score: +1.5</span>
-                    We explicitly state that 15,448 unsubstantiated
-                    allegations were excluded and identify the
-                    retained denominator. Compared with omitting
-                    this information, the note gives readers a way
-                    to recognize the filtering and question the
-                    representativeness of the displayed rate.
-                    Its smaller size makes it less prominent than
-                    the headline, so disclosure alone does not
-                    eliminate the risk of a misleading impression.
+                    Each category displays its substantiated count
+                    and retained denominator, and the note identifies
+                    the 15,448 excluded allegations. Compared with
+                    omitting these details, the disclosure helps
+                    readers recognize the filtering and the small
+                    retained sample behind the 98.4% Offensive
+                    Language result. Its lower prominence than the
+                    headline means disclosure reduces, but does
+                    not eliminate, the risk of overgeneralization.
                 </li>
             </ul>
         </section>
@@ -330,16 +349,20 @@
                 the outcomes and calculating the percentages was
                 straightforward. The harder part was making both
                 sides persuasive without changing the underlying
-                counts. We were surprised that excluding
-                unsubstantiated allegations changed the rate from
-                24.9% to 46.3%, letting us frame the same data as
-                “only one in four” or “nearly half.” Another difficulty
-                was accounting for the dataset’s selection rules:
-                it covers selected officers and excludes unfounded
-                allegations, so neither percentage represents the
-                entire complaint process. These choices showed us
-                how much the denominator, wording, and available
-                context can influence the reader’s impression.
+                substantiated counts. We were surprised that
+                excluding unsubstantiated allegations changed the
+                overall rate from 24.9% to 46.3%. Breaking the
+                results down by category made the contrast stronger:
+                every category was below one-third substantiated
+                when all records were included, but three of four
+                exceeded half after filtering. However, Offensive
+                Language had only 129 retained records, showing why
+                an impressive percentage needs its denominator.
+                Accounting for the release’s selected officers and
+                excluded unfounded allegations was another
+                difficulty. These choices showed us how grouping,
+                denominators, benchmarks, and wording can influence
+                the reader’s impression.
             </p>
 
             <p>
@@ -348,36 +371,37 @@
                 its consequences for others. Misinformation can
                 cause poor decisions, unwarranted fear or hostility,
                 and injustice, although presenting accurate but
-                upsetting findings is not itself unethical. For
-                our topic, either chart could become unethical if
-                used to encourage unsupported conclusions that harm
-                victims of police misconduct or unfairly characterize
-                officers. The first could imply that every allegation
-                without substantiation represents misconduct the
-                process failed to recognize. The second could imply
-                that the process reliably establishes misconduct
-                while overlooking the many unsubstantiated
-                allegations. Neither conclusion follows from
-                the displayed percentages alone.
+                upsetting findings is not itself unethical.
+                For our topic, either chart could become unethical
+                if used to encourage unsupported conclusions that
+                harm victims of police misconduct or unfairly
+                characterize officers. The first could imply that
+                every allegation without substantiation represents
+                misconduct the process failed to recognize.
+                The second could imply that the process reliably
+                establishes misconduct while overlooking the many
+                unsubstantiated allegations. Neither conclusion
+                follows from the displayed percentages alone.
             </p>
 
             <p>
                 The line between acceptable persuasive choices and
                 misleading ones is difficult to draw, and we should
-                be careful when applying those labels. A visualization
-                can reasonably focus on one aspect of reality or a
-                subset of the data to communicate a message, provided
-                that its scope is clear and its conclusions fit the
-                evidence. We consider choices misleading when they
-                encourage an unfounded or logically incorrect
-                interpretation by obscuring important context,
-                blurring distinct outcomes, or exploiting readers’
-                expectations. A presentation does not have to state
-                the exact opposite of reality, or intend harm, to
-                mislead. Our charts demonstrate that accurate numbers
-                alone are insufficient: readers also need to
-                understand the denominator and what the findings
-                do and do not establish.
+                be careful when applying those labels. A
+                visualization can reasonably focus on one aspect
+                of reality or a subset of the data to communicate
+                a message, provided that its scope is clear and
+                its conclusions fit the evidence. We consider
+                choices misleading when they encourage an
+                unfounded or logically incorrect interpretation
+                by obscuring important context, blurring distinct
+                outcomes, or exploiting readers’ expectations.
+                A presentation does not have to state the exact
+                opposite of reality, or intend harm, to mislead.
+                Our charts demonstrate that accurate numbers alone
+                are insufficient: readers also need to understand
+                the denominator and what the findings do and
+                do not establish.
             </p>
         </section>
 
@@ -418,11 +442,27 @@
             <p>
                 All substantiated subcategories are combined.
                 One complaint may contain multiple allegation
-                records. Substantiation does not necessarily mean
-                that discipline was imposed. In Figure 2,
-                “conclusive” refers only to substantiated and
-                exonerated findings included in this release;
-                unfounded allegations are absent.
+                records. Substantiation does not necessarily
+                mean that discipline was imposed.
+            </p>
+
+            <p>
+                In Figure 1, each category’s substantiated count
+                is divided by all released records in that
+                category. In Figure 2, it is divided by the
+                substantiated and exonerated records in that
+                category. The overall percentages use the
+                corresponding combined counts across categories,
+                rather than an unweighted average of the four
+                category percentages.
+            </p>
+
+            <p>
+                Any reference to “conclusive” findings is limited
+                to substantiated and exonerated outcomes available
+                in this release. Unfounded allegations are absent,
+                and unsubstantiated allegations were also fully
+                investigated.
             </p>
         </section>
     </main>
