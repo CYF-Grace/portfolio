@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project 2: NYPD Civilian Complaint Findings</title>
+
+    <style>
+        :root {
+            font-family: system-ui, sans-serif;
+            color: #24313a;
+            background: #f1f3f5;
+            line-height: 1.6;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            padding: 24px 0;
+            text-align: center;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.25;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin: 12px 0;
+        }
+
+        h1 small {
+            display: block;
+            margin-bottom: 12px;
+            color: #59656c;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        h2 {
+            padding-bottom: 12px;
+            border-bottom: 1px solid #d8dfe3;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            margin-top: 28px;
+            font-size: 1.15rem;
+        }
+
+        main {
+            padding: 24px 36px;
+            border-radius: 16px;
+            background: white;
+        }
+
+        section {
+            margin: 36px 0;
+        }
+
+        figure {
+            margin: 20px 0;
+            border: 1px solid #d8dfe3;
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            padding: 14px 18px;
+            background: #f5f6f7;
+            font-size: 0.95rem;
+        }
+
+        li {
+            margin-bottom: 18px;
+        }
+
+        .score {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 5px;
+            background: #eef1f3;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .context {
+            padding: 16px 20px;
+            border-left: 4px solid #667985;
+            background: #f5f6f7;
+        }
+
+        .members {
+            color: #59656c;
+            overflow-wrap: anywhere;
+        }
+
+        a {
+            color: #126a91;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            main {
+                padding: 16px;
+            }
+
+            ul {
+                padding-left: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <small>DSC 106 · Project 2</small>
+            Persuasive or Deceptive Visualization?
+        </h1>
+
+        <p class="members">
+            <strong>Yifei Chen</strong> — yic152@ucsd.edu<br>
+            <strong>Bill Chen</strong> — yuc225@ucsd.edu<br>
+            <strong>Mianzhi Hu</strong> — mih037@ucsd.edu
+        </p>
+    </header>
+
+    <main>
+        <h2>
+            Proposition: The NYPD civilian complaint process rarely
+            substantiates allegations of officer misconduct.
+        </h2>
+
+        <p class="context">
+            These visualizations use ProPublica’s July 2020 release
+            of civilian complaint records from the New York City
+            Civilian Complaint Review Board (CCRB). Each observation
+            is an allegation record, rather than a unique complaint.
+            The release covers officers still serving in June 2020
+            who had at least one substantiated allegation and excludes
+            unfounded allegations. These selection rules mean the
+            percentages do not estimate the substantiation rate for
+            the entire NYPD complaint process.
+        </p>
+
+        <section aria-labelledby="for-heading">
+            <h2 id="for-heading">For the Proposition</h2>
+
+            <figure>
+                <img src="ccrb_supporting.png" alt="Stacked bar showing 33,358 allegation records:
+                    46.3% unsubstantiated, 28.8% exonerated, and
+                    24.9% substantiated. The headline emphasizes
+                    the 75.1% without a substantiated finding.">
+                <figcaption>
+                    <strong>Figure 1.</strong>
+                    Of the 33,358 allegation records in the dataset,
+                    8,301 (24.9%) were substantiated. The visualization
+                    emphasizes the remaining 75.1%, framing
+                    substantiation as uncommon.
+                </figcaption>
+            </figure>
+
+            <h3>Design Decisions and Rationale</h3>
+
+            <p>
+                Scores range from −2 (fully deceptive) to
+                +2 (fully earnest).
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Title and headline emphasis.</strong>
+                    <span class="score">Score: −1</span>
+                    We use “Only one in four” and the large “75.1%”
+                    headline to emphasize how many allegations did
+                    not receive a substantiated finding. Unlike a
+                    headline foregrounding the 8,301 substantiated
+                    allegations, this framing makes substantiation
+                    appear uncommon. It draws attention away from
+                    the nearly one-quarter substantiated share
+                    without actually hiding it, and the word “only”
+                    suggests a judgment about what rate should be
+                    expected without establishing a benchmark.
+                </li>
+
+                <li>
+                    <strong>Similar colors for distinct outcomes.</strong>
+                    <span class="score">Score: −0.5</span>
+                    We use similar warm colors for unsubstantiated
+                    and exonerated allegations so readers may
+                    initially perceive them as a shared group without
+                    substantiation. Compared with three equally
+                    distinct colors, this creates a stronger visual
+                    contrast between that combined group and the
+                    gray substantiated segment. The labels preserve
+                    the distinction, but the color grouping can blur
+                    the difference between insufficient evidence
+                    and conduct that occurred but was permitted
+                    by NYPD rules.
+                </li>
+
+                <li>
+                    <strong>Stacked bar instead of a pie chart.</strong>
+                    <span class="score">Score: +0.5</span>
+                    We use a stacked bar to encode outcome shares
+                    through length rather than the angles of a pie
+                    chart. The complete percentage scale and direct
+                    labels help readers interpret the proportions,
+                    while the adjacent warm segments visually
+                    emphasize the combined 75.1%. Internal segments
+                    do not all share a starting baseline, so the
+                    labels remain important for precise comparisons.
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="against-heading">
+            <h2 id="against-heading">Against the Proposition</h2>
+
+            <figure>
+                <img src="ccrb_opposing.png" alt="Stacked bar showing 17,910 retained allegation
+                    records: 8,301 substantiated, or 46.3%, and
+                    9,609 exonerated, or 53.7%. The chart excludes
+                    15,448 unsubstantiated allegations.">
+                <figcaption>
+                    <strong>Figure 2.</strong>
+                    Excluding 15,448 unsubstantiated allegations
+                    leaves 17,910 records. The same 8,301
+                    substantiated allegations now represent 46.3%
+                    of the retained findings, making substantiation
+                    appear more common.
+                </figcaption>
+            </figure>
+
+            <h3>Design Decisions and Rationale</h3>
+
+            <p>
+                Scores range from −2 (fully deceptive) to
+                +2 (fully earnest).
+            </p>
+
+            <ul>
+                <li>
+                    <strong>“Nearly half” framing.</strong>
+                    <span class="score">Score: −0.5</span>
+                    We describe 46.3% as “nearly half” to emphasize
+                    its proximity to the familiar 50% benchmark.
+                    Compared with simply stating the exact
+                    percentage, this wording makes substantiation
+                    appear more common and slightly amplifies the
+                    impression of its size. The numerical label
+                    remains available, allowing readers to see that
+                    the share is still below half.
+                </li>
+
+                <li>
+                    <strong>Filtering and selective attention.</strong>
+                    <span class="score">Score: −1.5</span>
+                    We retain only substantiated and exonerated
+                    allegations, raising the displayed substantiation
+                    rate from 24.9% to 46.3% without changing the
+                    substantiated count. Keeping all three outcomes
+                    would preserve the original denominator and
+                    weaken this opposing impression. The headline
+                    and bar are more prominent than the qualification
+                    about retained findings, encouraging readers to
+                    generalize a result that actually answers a
+                    narrower question. Calling these “conclusive”
+                    findings also makes the exclusion sound natural,
+                    even though unsubstantiated allegations were
+                    fully investigated and unfounded findings are
+                    absent from the source.
+                </li>
+
+                <li>
+                    <strong>Complete percentage scale.</strong>
+                    <span class="score">Score: +1</span>
+                    We include a complete 0% to 100% scale so readers
+                    can judge how large the displayed proportions
+                    actually are. Compared with an unscaled bar or
+                    a truncated scale, it provides a clearer reference
+                    and shows that substantiated allegations remain
+                    below half of the retained records. This improves
+                    numerical interpretation, although it does not
+                    resolve the denominator’s limited scope.
+                </li>
+
+                <li>
+                    <strong>Disclosure of excluded records.</strong>
+                    <span class="score">Score: +1.5</span>
+                    We explicitly state that 15,448 unsubstantiated
+                    allegations were excluded and identify the
+                    retained denominator. Compared with omitting
+                    this information, the note gives readers a way
+                    to recognize the filtering and question the
+                    representativeness of the displayed rate.
+                    Its smaller size makes it less prominent than
+                    the headline, so disclosure alone does not
+                    eliminate the risk of a misleading impression.
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="reflection-heading">
+            <h2 id="reflection-heading">Final Reflection</h2>
+
+            <p>
+                In the process of designing the visuals, grouping
+                the outcomes and calculating the percentages was
+                straightforward. The harder part was making both
+                sides persuasive without changing the underlying
+                counts. We were surprised that excluding
+                unsubstantiated allegations changed the rate from
+                24.9% to 46.3%, letting us frame the same data as
+                “only one in four” or “nearly half.” Another difficulty
+                was accounting for the dataset’s selection rules:
+                it covers selected officers and excludes unfounded
+                allegations, so neither percentage represents the
+                entire complaint process. These choices showed us
+                how much the denominator, wording, and available
+                context can influence the reader’s impression.
+            </p>
+
+            <p>
+                We define ethical analysis and visualization as work
+                that represents evidence responsibly and considers
+                its consequences for others. Misinformation can
+                cause poor decisions, unwarranted fear or hostility,
+                and injustice, although presenting accurate but
+                upsetting findings is not itself unethical. For
+                our topic, either chart could become unethical if
+                used to encourage unsupported conclusions that harm
+                victims of police misconduct or unfairly characterize
+                officers. The first could imply that every allegation
+                without substantiation represents misconduct the
+                process failed to recognize. The second could imply
+                that the process reliably establishes misconduct
+                while overlooking the many unsubstantiated
+                allegations. Neither conclusion follows from
+                the displayed percentages alone.
+            </p>
+
+            <p>
+                The line between acceptable persuasive choices and
+                misleading ones is difficult to draw, and we should
+                be careful when applying those labels. A visualization
+                can reasonably focus on one aspect of reality or a
+                subset of the data to communicate a message, provided
+                that its scope is clear and its conclusions fit the
+                evidence. We consider choices misleading when they
+                encourage an unfounded or logically incorrect
+                interpretation by obscuring important context,
+                blurring distinct outcomes, or exploiting readers’
+                expectations. A presentation does not have to state
+                the exact opposite of reality, or intend harm, to
+                mislead. Our charts demonstrate that accurate numbers
+                alone are insufficient: readers also need to
+                understand the denominator and what the findings
+                do and do not establish.
+            </p>
+        </section>
+
+        <section aria-labelledby="source-heading">
+            <h2 id="source-heading">Data Source and Definitions</h2>
+
+            <p>
+                <a
+                    href="https://www.propublica.org/datastore/dataset/civilian-complaints-against-new-york-city-police-officers">
+                    ProPublica: Civilian Complaints Against New York
+                    City Police Officers
+                </a>,
+                July 2020 release. Calculations use the supplied
+                <code>allegations_202007271729.csv</code> file.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Substantiated:</strong>
+                    The alleged conduct occurred and violated
+                    NYPD rules.
+                </li>
+
+                <li>
+                    <strong>Exonerated:</strong>
+                    The alleged conduct occurred but did not
+                    violate NYPD rules.
+                </li>
+
+                <li>
+                    <strong>Unsubstantiated:</strong>
+                    Investigators could not establish both that
+                    the conduct occurred and that it violated
+                    the rules.
+                </li>
+            </ul>
+
+            <p>
+                All substantiated subcategories are combined.
+                One complaint may contain multiple allegation
+                records. Substantiation does not necessarily mean
+                that discipline was imposed. In Figure 2,
+                “conclusive” refers only to substantiated and
+                exonerated findings included in this release;
+                unfounded allegations are absent.
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>
