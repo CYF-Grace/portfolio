@@ -197,3 +197,141 @@ form button {
         grid-row: 4;
     }
 }
+
+/* Lab 5, Step 0.1: Display project years */
+.projects .project-details>p:first-child {
+    margin-top: 0;
+}
+
+.projects .project-year {
+    font-family: Baskerville, Georgia, serif;
+    font-variant-numeric: oldstyle-nums;
+    color: inherit;
+    opacity: 0.7;
+    margin-top: 0.5em;
+}
+
+/* Lab 5, Step 1.1: Size the projects chart */
+#projects-pie-plot {
+    display: block;
+    width: 100%;
+    max-width: 20em;
+    flex: 0 1 20em;
+    min-width: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+/* Lab 5, Step 2.2: Arrange and frame the legend */
+.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1em;
+
+    list-style: none;
+    border: 1px solid;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin-block: 1em 2em;
+}
+
+/* Align each swatch with its label and value */
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* Make each swatch a colored square */
+.legend .swatch {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    background-color: var(--color);
+    border-radius: 0.2em;
+}
+
+/* Lab 5, Step 2.3: Place the pie and legend side by side */
+.projects-chart {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-block: 2em;
+}
+
+.projects-chart .legend {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+
+/* Stack the chart and legend on narrow screens */
+@media (max-width: 40em) {
+    .projects-chart {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .projects-chart #projects-pie-plot {
+        flex: none;
+        align-self: center;
+    }
+
+    .projects-chart .legend {
+        grid-template-columns: repeat(auto-fill, minmax(min(9em, 100%), 1fr));
+    }
+}
+
+/* Lab 5, Step 4.1: Style the project search field */
+.searchBar {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin-block: 0 2em;
+    padding: 0.75em 1em;
+    font: inherit;
+    color: inherit;
+    background-color: canvas;
+    border: 1px solid;
+    border-radius: 0.5em;
+}
+
+/* Lab 5, Step 5.1: Smoothly fade slices when another is hovered */
+#projects-pie-plot path {
+    transition: opacity 300ms;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+}
+
+/* Lab 5, Step 5.2: Highlight the selected year */
+#projects-pie-plot path.selected,
+.legend-item.selected {
+    --color: #00bfa5 !important;
+}
+
+#projects-pie-plot path.selected {
+    fill: var(--color);
+}
+
+/* Show that slices and legend entries are interactive */
+#projects-pie-plot path,
+.legend-item {
+    cursor: pointer;
+}
+
+/* Hide focus outlines for mouse clicks */
+#projects-pie-plot path:focus:not(:focus-visible),
+.legend-item:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Keep a visible focus indicator for keyboard navigation */
+#projects-pie-plot path:focus-visible,
+.legend-item:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
