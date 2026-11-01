@@ -335,3 +335,208 @@ form button {
     outline: 2px solid currentColor;
     outline-offset: 3px;
 }
+
+/* Lab 6: Meta page summary statistics */
+
+#stats dl.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem 1.5rem;
+    margin-block: 2rem;
+}
+
+#stats dl.stats dt {
+    grid-row: 1;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+#stats dl.stats dd {
+    grid-row: 2;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+#stats dl.stats dt:nth-of-type(n + 4) {
+    grid-row: 3;
+    margin-top: 1rem;
+}
+
+#stats dl.stats dd:nth-of-type(n + 4) {
+    grid-row: 4;
+}
+
+@media (max-width: 600px) {
+    #stats dl.stats {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.35rem;
+    }
+
+    #stats dl.stats dt,
+    #stats dl.stats dd {
+        grid-row: auto;
+    }
+
+    #stats dl.stats dt:nth-of-type(n + 4),
+    #stats dl.stats dd:nth-of-type(n + 4) {
+        grid-row: auto;
+    }
+
+    #stats dl.stats dt {
+        margin-top: 1rem;
+    }
+
+    #stats dl.stats dd {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Lab 6: Commit scatterplot */
+
+#chart {
+    margin-block: 2rem;
+}
+
+#chart>svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 5 / 3;
+}
+
+#chart .x-axis,
+#chart .y-axis {
+    font-size: 12px;
+    font-family: inherit;
+}
+
+#chart .axis-label {
+    font-size: 14px;
+    font-family: inherit;
+}
+
+/* Lab 6: Horizontal gridlines */
+
+#chart .gridlines line {
+    stroke: currentColor;
+    stroke-opacity: 0.15;
+}
+
+#chart .gridlines .domain {
+    display: none;
+}
+
+#chart .gridlines {
+    pointer-events: none;
+}
+
+/* Lab 6: Commit information and tooltip */
+
+dl.info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1rem;
+    margin: 0;
+}
+
+dl.info dt {
+    margin: 0;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+dl.info dd {
+    margin: 0;
+}
+
+.tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    z-index: 1000;
+    background-color: Canvas;
+    color: CanvasText;
+    border: 1px solid color-mix(in srgb, CanvasText 20%, transparent);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 0.2);
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    max-width: min(360px, calc(100vw - 2rem));
+    overflow-wrap: anywhere;
+}
+
+#commit-tooltip dd {
+    min-width: 0;
+}
+
+#chart .dots circle {
+    transition: transform 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#chart .dots circle:hover {
+    transform: scale(1.5);
+}
+
+/* Lab 6: Tooltip visibility */
+
+dl.info {
+    transition-duration: 200ms;
+    transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Lab 6: Brush selection rectangle */
+
+@keyframes marching-ants {
+    to {
+        stroke-dashoffset: -8;
+    }
+}
+
+#chart .selection {
+    fill: currentColor;
+    fill-opacity: 0.1;
+    stroke: currentColor;
+    stroke-opacity: 0.7;
+    stroke-width: 1;
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
+}
+
+/* Lab 6: Selected commits */
+
+#chart .dots circle.selected {
+    fill: #ff6b6b;
+}
+
+/* Lab 6: Selected commits' language breakdown */
+
+#language-breakdown {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1.5rem;
+    margin-block: 1rem 2rem;
+}
+
+#language-breakdown dt {
+    margin: 0;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+#language-breakdown dd {
+    margin: 0;
+    font-weight: bold;
+}
