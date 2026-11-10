@@ -150,6 +150,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
             <img src="${project.image}" alt="${project.title}">
             <div class="project-details">
                 <p>${project.description}</p>
+                ${project.url ? `<p><a href="${project.url}">View project</a></p>` : ''}
                 <p class="project-year">${project.year}</p>
             </div>
         `;
