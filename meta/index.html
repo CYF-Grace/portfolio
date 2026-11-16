@@ -14,11 +14,25 @@
     <h1>Meta</h1>
     <p>This page shows statistics about the code and commit history of my portfolio website.</p>
 
+    <label for="commit-progress">
+        Show commits until:
+        <input id="commit-progress" type="range" min="0" max="100" value="100">
+        <time id="commit-time"></time>
+    </label>
+
     <div id="stats"></div>
-    <h2>Commits by time of day</h2>
-    <div id="chart"></div>
-    <p id="selection-count">No commits selected</p>
-    <dl id="language-breakdown" class="stats"></dl>
+
+    <div id="scrolly-1">
+        <div id="scatter-story"></div>
+
+        <div id="scatter-plot">
+            <h2>Commits by time of day</h2>
+            <div id="chart"></div>
+            <p id="selection-count">No commits selected</p>
+            <dl id="language-breakdown" class="stats"></dl>
+        </div>
+    </div>
+
     <dl id="commit-tooltip" class="info tooltip" hidden>
         <dt>Commit</dt>
         <dd>
@@ -29,7 +43,7 @@
         <dd id="commit-date"></dd>
 
         <dt>Time</dt>
-        <dd id="commit-time"></dd>
+        <dd id="commit-tooltip-time"></dd>
 
         <dt>Author</dt>
         <dd id="commit-author"></dd>
@@ -37,6 +51,15 @@
         <dt>Lines edited</dt>
         <dd id="commit-lines"></dd>
     </dl>
+
+    <section id="scrolly-2" aria-labelledby="file-story-title">
+        <div id="file-story"></div>
+
+        <div id="file-plot">
+            <h2 id="file-story-title">Lines by file</h2>
+            <dl id="files"></dl>
+        </div>
+    </section>
 </body>
 
 </html>
